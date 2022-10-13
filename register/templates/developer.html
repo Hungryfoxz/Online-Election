@@ -1,0 +1,281 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    {% include 'header.html' %}
+
+<body class="grey lighten-3">
+
+    <!--Navbar [+]-->
+    {% include 'navbar.html' %}
+
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--============================================== Floating Button ========================================================-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large transparent">
+          <i class="large material-icons purple-text text-accent-3 z-depth-5">menu</i>
+        </a>
+        <ul>
+          <li><a href="/vote" class="btn-floating purple lighten-3"><i class="material-icons">touch_app</i></a>Vote</li>
+          <li><a href="/login" class="btn-floating purple lighten-2"><i class="material-icons">fingerprint</i></a>Login</li>
+          <li><a href="/register" class="btn-floating purple lighten-1"><i class="material-icons">person_add</i></a>Register</li>
+          <li><a href="/" class="btn-floating purple"><i class="material-icons">home</i></a>Home</li>
+        </ul>
+      </div>
+
+      <!--Perfect save it now -->
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+<!--About Developer Page start-->
+
+<!--[==============================================================================================================================]-->
+
+<div class="container">
+    <!--container start div-->
+    <div class="row">
+        <div class="col s12 m12 l12" style="padding-bottom: 0px;">
+    <h1 class="custom-print center-align animate__animated animate__fadeInDown annimate__slower" style="font-family: 'Monoton';padding-bottom: 0px;"><i class="material-icons medium">mode_edit</i> About Me</h1>
+        </div>
+    </div>
+    <h1></h1>
+    <!--Hero Image-->
+    <div class="row">
+        <div class="col s8 m6 l5 offset-s2 offset-l1">
+            <img class="length1 animate__animated animate__fadeInRight annimate__slower animate__delay-800ms" src="{% static 'last-dev.svg' %}" alt="about svg">
+        </div>
+        <div class="col s10 m6 l5 offset-s1">
+            <h6 class="center-align grey-text animate__animated animate__fadeInRight animate__delay-1s annimate__slower">Hi this is <span class="custom-print">@hungryf0xz</span> aka </h6>
+            <h1 class="teal-text center-align purple-text text-darken-4 animate__animated animate__fadeInLeft animate__delay-1s annimate__duration-4s" style="font-family:'Caveat' ;">Kaustav  Kumar Khanikar</h1>
+        </div>
+    </div>
+
+    <!--horizontal line to divide the sections-->
+    <hr>
+
+    <!--Body of the about me section below the hero image-->
+    <div class="row">
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_weak</i> Background</h4>
+                <span class="black-text">I am from Sivasagar,Assam. I started my b.Tech journey from Jorhat Institute of Science & Technology along with 
+                    a BCA degree parallely, both of which started in the same year i.e 2019.
+                    I am a Cybersecurity Enthusiast. But I also developed a taste in programming and as a result of which I started 
+                    learning web Development during the period of lockdown due to Covid-19.</span>
+            </div>
+        </div>
+        <div class="col s11 m4 l4 offset-l1 offset-s1">
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-1s" src="{% static 'blooming.svg' %}" alt="image">
+        </div> 
+
+    </div>
+    <hr>
+    <!--another card element in the body-->
+
+    <div class="row">
+        <!--Large screen image-->
+        <div class="col m5 l5 show-on-medium-and-up hide-on-med-and-down">
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-1s" src="{% static 'awesome.svg' %}" alt="image">
+        </div>
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_strong</i> My Interest</h4>
+                <span class="black-text">As you have already known how i started learning web Development, You must also know that doing web Development
+                    is not my first hobby.The way I would describe it is - To break things the way they were made, you must first know how to make things.
+                    That is why web development opens a new wondow for me to my security perspective to be visualized in a extensible manner.
+                </span>
+            </div>
+        </div>
+        <!--Small screen image-->
+        <div class="col s11 offset-s1 hide-on-med-and-up">
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-1s" src="{% static 'awesome.svg' %}" alt="image">
+        </div> 
+
+    </div>
+
+    <hr>
+    <!--This is the third part of the body in about developer page-->
+
+
+    <div class="row">
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_weak</i> Idea of this Website</h4>
+                <span class="black-text">Now coming to the development of this website, which was total coincidence with the fact that,
+                     I was learning Full stack development during those days. And to my surprise I found a popup in my whatsapp, I opened it and 
+                     saw that JIST was organizing a software development competition. Like the whole universe was telling me to do it. So I jumped
+                     right on to it. Although I had exams during that period but I couldn't think of anything else other than laying ideas on my head 
+                     about how to make it.
+                </span>
+            </div>
+        </div>
+        <div class="col s11 m4 l4 offset-l1 offset-s1">
+            <h1></h1>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-2s" src="{% static 'walking.svg' %}" alt="image">
+        </div> 
+
+    </div>
+
+    <hr>
+    <!--another card of how this website was made-->
+
+    <div class="row">
+        <!--Large screen image-->
+        <div class="col m5 l5 show-on-medium-and-up hide-on-med-and-down">
+            <h1></h1>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-2s" src="{% static 'cycle.svg' %}" alt="image">
+        </div>
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_strong</i>Process of Creation</h4>
+                <span class="black-text">So after having gone through a ton of ideas on the drawing board, it was time to actually implement it in such 
+                    a way that it suits the need of the institution and also should be the one among various others as it was a part of a competition.
+                    I decided to go with Python to create the backend, and for that i had to take the help of the Django framework which was perfect for 
+                    this scenario. Also one advantage with django is that it comes with an inbuilt SqlLite database, hence we are relieved from setting up our own database.
+                    I was familiar with frontend already. Eventhough I had worked with bootstrap but for this one I choose to go with MaterializeCSS.
+                    And with all that I created this Website.
+                </span>
+            </div>
+        </div>
+        <!--Small screen image-->
+        <div class="col s11 offset-s1 hide-on-med-and-up">
+            <h3></h3>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-2s" src="{% static 'cycle.svg' %}" alt="image">
+        </div> 
+
+    </div>
+    <hr>
+
+    <!--This is the 5th part of the body in about developer page-->
+
+
+    <div class="row">
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_weak</i> Outcome </h4>
+                <span class="black-text">I would say I am pretty much happy with how the website looks like after many sleepless nights
+                    of hard work. I know its not perfect, but to me its more than what I imagined, of what I could achieve. It has truly
+                    redefined new boundaries to what I can do to what I could think of. My idea of participating in this competition was never
+                    about winnig, rather I saw this as an opportunity to grow myself. And it has really helped me to improve my skills.
+                </span>
+            </div>
+        </div>
+
+        <div class="col s11 m4 l4 offset-l1 offset-s1">
+            <h1></h1>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-3s" src="{% static 'outcome.svg' %}" alt="image">
+        </div> 
+
+    </div>
+
+    <hr>
+
+     <!--another card for final words -->
+
+     <div class="row">
+        <!--Large screen image-->
+        <div class="col m5 l5 show-on-medium-and-up hide-on-med-and-down">
+            <h1></h1>
+            <h1></h1>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-3s" src="{% static 'newsletter.svg' %}" alt="image">
+        </div>
+        <div class="col s12 m7 l7">
+            <div class="card-panel teal lighten-4 hoverable">
+                <h4 class="custom-print"><i class="material-icons">hdr_strong</i>Final Message</h4>
+                <span class="black-text">Now I can say that hardwork really pays off. Why I am telling you this is because there were moments
+                    when I wanted to quit and pull myself off of this project. But I fought through that because something inside of me always told 
+                    that I was better than that and in that moment of time I could see the ray of hope and found the courage to get back again. <br>
+                    <i class="material-icons small">sentiment_very_satisfied</i><br>
+                    <span class="teal-text">*Fun Fact : </span>It took me more than a week to write the code that was responsible 
+                    for adding the votes with the respective Candidates to the backend.I was just about to quit but somehow it worked at 
+                    my last attempt. Most importantly the code was only five lines, funny isn't it ! <br> 
+                    <br>
+                    So no matter how hard it seems, We can always find a way to reach our destination. Because success is only one step 
+                    away. Just keep working hard and and never lose hope.
+                </span>
+            </div>
+        </div>
+        <!--Small screen image-->
+        <div class="col s11 offset-s1 hide-on-med-and-up">
+            <h3></h3>
+            <img  class="length2 animate__animated animate__fadeInRight annimate__slower animate__delay-3s" src="{% static 'hey.svg' %}" alt="image">
+        </div> 
+
+    </div>
+    <div class="row center-align">
+    <h1></h1>
+    <p class="grey-text" style="font-size: 12px;">Made with<i style="font-size: 12px;"class="material-icons">favorite</i> by <span class="custom-print"> @hungryfoxz</span> </p>
+
+    </div>
+    <hr>
+
+
+
+    <!--Ending thanku note to the viewer-->
+    <h3></h3>
+    <div class="row">
+        <div class="center-align">
+            <div class="margin-of-text">
+            <p class="grey-text" style="font-size: 12px;">You made it this far. Hope you enjoyed it.</p>
+            <p class="grey-text"  style="font-size: 12px;">I wish you have a great day ahead of you !</p>
+            </div>
+
+            <!--######################################################################-->
+                <!--<div class="chip">
+                    <img src="/static/elephant.jpg" alt="Contact Person">
+                    @hungryfoxz
+                </div>-->                
+            <!--######################################################################-->
+            <!--Connections to the developer-->
+            <div>
+                <h1></h1>
+                <h6 class="grey-text"  style="font-size: 12px;">Want to Connect.</h6>
+                <h3></h3>
+                <div class="row">
+                    <div class="col s4 m4 l4">
+                        <i><img class="tooltipped" data-position="left" data-tooltip="I am avaialable at Facebook"  src="{% static 'facebook-logo.svg' %}"></i>
+                        <p class="center-align custom-print" style="font-size: 12px;">@hungryfoxz</p>
+                   </div>
+                   <div class="col s4 m4 l4">
+                        <i><img class="tooltipped" data-position="buttom" data-tooltip="You can see my Github repo with the below username" src="{% static 'github-logo.svg' %}"></i>
+                        <p class="center-align custom-print" style="font-size: 12px;">@hungryfoxz</p>
+                    </div>
+                     <div class="col s4 m4 l4">
+                        <i><img class="tooltipped" data-position="right" data-tooltip="I am avaialable at Twitter" src="{% static 'twitter-logo.svg' %}"></i>
+                        <p class="center-align custom-print" style="font-size: 12px;">@Hungryf0xz</p>
+                    </div>
+                </div>     
+            </div>
+          
+            <h1></h1>
+            <a href="/" class="btn waves-effect waves-purple z-depth-5 " data-position="left" data-tooltip="Go back to home">Home</a>
+        </div>
+    </div>
+
+    <!--container end div-->
+</div>
+
+
+    <!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--[==============================================================================================================================]-->
+
+<!--About Developer Page end-->
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+    <!--Footer [+] inclusion from footer.html-->
+    {% include 'footer.html' %}
+    
+
+</body>
+</html>

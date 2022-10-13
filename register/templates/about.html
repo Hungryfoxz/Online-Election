@@ -1,0 +1,146 @@
+{% load static%}
+<!DOCTYPE html>
+
+<html>
+    {% include 'header.html' %}
+
+<body class="blue-grey lighten-5">
+
+    <!--Navbar [+]-->
+    {% include 'navbar.html' %}
+
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--============================================== Floating Button ========================================================-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large transparent">
+          <i class="large material-icons purple-text text-accent-3 z-depth-5">menu</i>
+        </a>
+        <ul>
+          <li><a href="/vote" class="btn-floating purple lighten-3"><i class="material-icons">touch_app</i>Vote</a></li>
+          <li><a href="/login" class="btn-floating purple lighten-2"><i class="material-icons">fingerprint</i>Login</a></li>
+          <li><a href="/register" class="btn-floating purple lighten-1"><i class="material-icons">person_add</i>Register</a></li>
+          <li><a href="/" class="btn-floating purple"><i class="material-icons">home</i>Home</a></li>
+        </ul>
+      </div>
+
+      <!--Perfect save it now -->
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+<!--[+] Write the about page from here-->
+
+    <div class="container">
+        <div class="row">
+            <!--Printing just the 'about us' in very large font size-->
+            <div class="col l10 s12 m10 offset-l1 ">
+                <h1 class="myclass-of-about center-align custom-print animate__animated animate__zoomIn">'About Us'</h1>
+            </div>
+        </div>
+            <!--Showing a svg image after the hero logo-->
+        <div class="row">
+            <div class="col s10 m12 l5 offset-s1 hide-on-med-and-up">
+                <img class="length2 push-l1 animate__animated animate__fadeInRight" src={% static 'house.svg' %} alt="about image loading problems alternative">
+            </div>
+            <div class="col s11 m12 l5 offset-l1">
+                <h3 class="animate__animated animate__fadeInLeft annimate__slower"><i class="small material-icons custom-print">school</i>Jorhat Institute of Science and Technology</h3>
+                <p>Jorhat Institute of Science and Technology, in short, JIST is a premier and unique Institute of Assam, situated in Sotai, Jorhat District of Assam. This web application is the property of JIST.</p>
+                <p>The website as you may have already guessed is an polling web application.It was developed by one of our students, which by the way came as a part of a competition.</p>
+                <p>The purpose of this website is to hold only general elections of the Institution, which are organised every year.</p>
+            </div>
+            <div class="col s12 m12 l5 offset-l1">
+                <img class="length push-l1 hide-on-med-and-down animate__animated animate__fadeInRight" src={% static 'house.svg' %} alt="about image loading problems alternative">
+            </div>
+        </div>
+        <!--appliaction [+] about-->
+        <div class="row">
+            <div class="col s8 m8 l5 offset-s1 offset-l1 offset-m3">
+                <img class="length2 center-align animate__animated animate__fadeInRight annimate__slower animate__delay-1s" src={% static 'pair_programming.svg' %} alt="teamwork">
+            </div>
+            <div class="col s11 m12 l5 offset-l1">
+                <h3><i class="small material-icons custom-print">code</i>JISTSU Application</h3>
+                <p>The website is build on the Django framework, which is developed from the Python language.
+                    So the backend of this website is nothing but Python.
+                    It uses SqlLite as the Database.It pulls the Django's Templating engine to render into the HTML document.</p>
+                    <p>The frontend is HTML,Css,Vanilla JS & JQuery.It makes use of the Css framework MaterializeCSS.</p>
+                    <p>Apart from this only some AJAX requests are made for the JSON data.</p>
+            </div>
+        </div>
+
+        <!--Security [+] about-->
+        <div class="row">
+            <!--image for the mobile-->
+            <div class="col s10 m8 l5 offset-l1 offset-s2 offset-m3 show-on-medium-and-down hide-on-med-and-up">
+                <img class="length1 center-align animate__animated animate__fadeInRight annimate__slower animate__delay-2s" src={% static 'security.svg' %} alt="teamwork">
+            </div>
+        
+            <div class="col s11 m9 l5 offset-l1 offset-m3]">
+                <h3><i class="small material-icons custom-print">visibility_off</i>Security</h3>
+                <p>The website provides the maximum Security in terms of users PII information. 
+                    All the user inputs are sanitized in order to protect itself from the possible XSS,Sql & Temlplate injection attacks.</p>
+                <p>It uses advanced sanitization features to detect unwanted characters being injected. 
+                    CSRF token is also used to prevent unintended redirects.</p>
+                <p>If you think that you have found any severe bugs like RCE,Sensitive data exposure,Broken access control etc. Please report us immediately. 
+                    We will be happy to resolve the issue as soon as possible. Also avoid unwanted testing, unless asked by the responsible authority.</p>
+            </div>
+            <!--image for desktop only and large skins..-->
+            <div class="col s12 m8 l5 offset-l1 offset-m3 show-on-medium-and-up hide-on-med-and-down">
+                <img class="length center-align animate__animated animate__fadeInRight annimate__slower animate__delay-2s" src={% static 'security-3.svg' %} alt="teamwork">
+            </div>
+        </div>
+
+        <!--About the devloper and the redirect to know more about him buttom is provided in this section..-->
+
+        <div class="row">
+            <!--image for the mobile-->
+            <div class="col s10 m8 l5 offset-l1 offset-s2 offset-m3 show-on-large hide-on-med-and-down">
+                <img class="length center-align animate__animated animate__fadeInRight annimate__slower animate__delay-3s" src={% static 'proud-coder.svg' %} alt="teamwork">
+            </div>
+            <div class="col s10 m8 l5 offset-l1 offset-s2 offset-m3 show-on-medium-and-down hide-on-med-and-up">
+                <img class="length2 center-align animate__animated animate__fadeInRight annimate__slower animate__delay-3s" src={% static 'proud-coder.svg' %} alt="teamwork">
+            </div>
+        
+            <div class="col s11 m9 l5 offset-l1 offset-m3]">
+                <h3><i class="small material-icons custom-print">widgets</i>Developer</h3>
+                <p>Hi !</p>
+                <p>I am Kaustav Kumar Khanikar.</p>
+                <p>I created this website in 2022 as a part of an ongoing Software Development competition organized by Jorhat Institute of Science & Technology.
+                    This website got selected as the best one, and since then it became the property of JIST. Want to know more about me, Click below .
+                </p>
+                    <a class="btn-small waves-effect waves-purple white-text center-align z-depth-5" tooltip-position="bottom" data-tooltip="Are you excited to know about me!" href="/developer"><i class="material-icons"></i>More</a>
+                    
+            </div>
+        </div>
+         <!--Go back home button and little thank you note..-->   
+        <div class="center-align">
+            <h1></h1>
+            <h6 class="custom-print" style="font-size: 12px;">Thank You for making this far. Click below to go Home.</h6>
+        <a class="tooltipped" data-tooltip="Go to Home" tooltip-position="bottom" href="/"><i class="material-icons small teal-text">home</i></a>
+        </div>
+        <!--container div-->
+    </div>
+
+<!--[+] Ending of the about page here-->
+
+    <!--Cartoon image above footer-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12 center-align">
+                    <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+                </div>
+            </div>
+        </div>
+
+         <!--signature-->
+            <div class="row center-align" style="margin-bottom: 0px; margin-top: 0px;">
+                <p class="grey-text" style="margin-bottom: 0px; margin-top: 0px;font-size: 10px;">Made with<i class="material-icons" style="font-size: 12px;">favorite</i> by <span class="custom-print"> @hungryfoxz</span></p>
+            </div>
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+    <!--Footer [+] inclusion from footer.html-->
+    {% include 'footer.html' %}
+
+</body>
+</html>

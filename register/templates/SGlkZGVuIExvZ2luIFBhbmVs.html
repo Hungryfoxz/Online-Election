@@ -1,0 +1,167 @@
+{% load static%}                                               <!-- SGlkZGVuIExvZ2luIFBhbmVs -->
+<!DOCTYPE html>
+<html>
+    {% include 'header.html' %}
+
+<body class="blue-grey lighten-5">
+    <!--Individual navbar differnet from the other pages..-->
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+        
+
+<!--Start of balloting page here-->
+    
+    <!--[========Welcome and Image section=====]-->
+
+    <div class="container center-align">
+        
+
+     <!--[========   Container start   ======]-->   
+        
+        <div class="row">
+            <div class="col s12 l12 m12">
+                <h1 class="custom-print center-align animate__animated animate__fadeInDown animate__delay-.1s animate__slow" style="font-family: 'Monoton';">Welcome to Voting</h1>
+            </div>
+
+
+             <!--Error message shown here!!!-->
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="pink-text text-accent-2 {{ message.tags }}"{% endif %}>
+                        
+                        <h6 class="animate__animated animate__wobble animate__delay-.8s">{{message}}</h6>
+                        
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                
+
+
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'last_image.svg' %} alt="voting image">
+            </div>
+        </div>
+
+        <h3 class="teal-text"><i class="material-icons">camera_front</i></h3>
+        <p class="grey-text text-darken-2">Below are the Candidates with their respective Positions.</p>
+        <p><i class="material-icons grey-text text-darken-2">touch_app</i>Click on More to know more about the Candidate.</p>
+        <p class="grey-text">Make sure you have selected the respective candidates of your choice before submitting. You can submit only once. </p>
+
+        <h1></h1>
+
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--[===========   Body starts    =============]-->   
+    
+    <!-- [========Form starts =========] -->
+<section class="section contianer scrollspy" id="vote">
+    <div class="row center-align">
+        <div class="col s12 m12 l12">
+        <form action=" " method="POST">
+  
+            <!--CSRF validation-->
+            {% csrf_token %}
+
+                {% for position in positions %}
+
+                <!-- If the position is present in the Positon_Table -->
+                <!-- Printing the position here-->
+                <h4 class="custom-print"><i class="material-icons">person_pin</i>{{position}}</h4>
+                <hr style="color: rgb(254, 232, 243);">
+                <h4></h4>
+                <!-- The position is printed in the main container div -->
+
+                <div class="row center-align">
+                <!-- This is div will assign a Row -->
+                    <div class="col s12 m10 l10 offset-l1 offset-m1">
+                    <ul class="collapsible popout z-depth-0">
+                        {% for candidate in candidates  %}
+                            {% if candidate.position == position %}
+                                <li>
+                                    <label>
+                                        <input class="with-gap" name="{{position}}" type="radio" value="{{candidate.id}}" autocomplete="off"/>
+                                        <span class="black-text" style="margin-top: 4px;"><b>{{candidate.name}}</b></span>
+                                    </label>
+                                <div class="collapsible-header teal lighten-4 grey-text text-darken-2" style="padding-top: 0px; padding-bottom: 0px;"><p class="center-align"><i class="material-icons left">expand_more</i><span class="blue-text">More</span> about {{candidate.name}} ....</p></div>
+                                    
+                                <div class="collapsible-body blue-grey lighten-4 black-text"><span>{{candidate.bio}}</span></div>
+                                </li>
+                                <h4></h4>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </div>
+                {% endfor %}  
+
+                
+                
+            <!--[++++]=======Extra security step=======[++++]-->
+            <!--[========= Getting the user email once again ============]-->
+                <!--email input field-->
+                <div class="row center-align">
+                    <div class="col s8 m8 l8 offset-s2 offset-m2 offset-l2">
+                        <p class="grey-text text-darken-2">A little step to ensure extra security. Please enter the e-mail again.</p>
+                        <div class="input-field">
+                            <input type="email" id="email" name="email">
+                            <label for="email">Your Email here</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Buuton submit/register-->
+                <div class="align-center center-align">
+                    <h1></h1>
+                  <button class="btn z-depth-5"><i class="material-icons left">account_circle</i> SUBMIT </button>
+                </div>
+                <p></p>
+    
+    
+    
+        </form>
+    
+        <!--end of form-->
+        </div>
+    </div>
+    
+</section>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->   
+
+<!-- User Agrement -->
+
+
+        <span>
+            <p style="display:inline;"><i class="material-icons green-text text-accent-3">check</i>
+            I agree to the<a onclick="M.toast({html: 'I will vote only once with my registered account and I won\'t try to vote again !'})"><u> terms and conditions !</u></a></p>
+        </span>
+
+
+
+
+
+
+    <!--[========   Container end   ======]-->
+
+    </div>
+
+ <!--[+] Ending of the balloting page here-->
+
+    <!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+<!--Footer [+] inclusion from footer.html-->
+{% include 'footer.html' %}
+
+</body>
+</html>

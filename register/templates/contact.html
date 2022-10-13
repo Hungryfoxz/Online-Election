@@ -1,0 +1,144 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    {% include 'header.html' %}
+
+    <!--body starts..-->
+<body class="blue-grey lighten-5">
+
+
+    {% include 'navbar.html' %}
+
+     <!--Error message shown here!!!-->
+     <div class="row center-align">
+     {% if messages %}
+     <ul class="messages">
+         {% for message in messages %}
+         <li {% if message.tags %} class="pink-text text-accent-2 {{ message.tags }}"{% endif %}>
+             
+             <h6 class="animate__animated animate__fadeInDown animate__delay-.8s">{{message}}</h6>
+             
+         {% endfor %}
+     </ul>
+     {% endif %}
+    </div>
+
+
+
+            <!-- Modal Structure -->
+            <!--{% if messages %}
+                {% for message in messages %}
+                    <div id="modal1" class="modal modal-trigger" {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        <div class="modal-content">
+                            <p>{{ message }}</p>
+                        </div>
+                        <div class="modal-footer">
+                        <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}-->
+
+
+            <!--
+            <html>  
+            <body>  
+                <button id="trigger" onclick="msg()">Auto Click</button>
+
+                <script>
+                    document.getElementById("trigger").click();
+
+                    function msg(){
+                        alert("Auto click");
+                    }
+                </script>
+
+            </body>  
+            </html> 
+
+
+            $(window).load(function() {
+                alert('Test');
+            });
+
+
+            window.onload = function(){
+            alert('test');
+            }
+            -->
+
+                
+    <!--Hero image..-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l12 m12">
+                <h2 class="center-align custom-print animate__animated animate__fadeInDown animate__delay-.7s animate__slow"><i class="material-icons">border_color</i> Contact Form</h2>
+                <p class="center-align grey-text text-darken-2 animate__animated animate__fadeInRightBig animate__delay-.8s animate__slow">Write all your queries here.</p>
+            </div>
+        
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image animate__animated animate__zoomIn" src={% static 'completed_tasks.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+    <!--contact form..-->
+
+    <section class="section contianer scrollspy" id="contact">
+        <div class="row">
+            <div class="col s10 l8 offset-s1 offset-l2">
+
+                <!--Form metho POST to database-->
+
+            <form method="POST" action=" ">
+                {% csrf_token %}
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email" name="email">
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">message</i>
+                    <textarea  id="message" class="materialize-textarea" name="message"></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" type="tel" class="validate" data-length="10" name="phone">
+                    <label for="phone">Telephone</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">keyboard</i>
+                    <input type="text" id="date" class="datepicker">
+                    <label for="date">Choose a Date</label>
+                </div>
+                <div class="align-center center-align">
+                    <h1></h1>
+                    <button class="btn z-depth-5 tooltipped" data-tooltip="Submitting" tooltip-position="bottom"><i class="material-icons left">send</i> Submit</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+  </section>
+
+  <!--[+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+<!--End of contact form -->
+<!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

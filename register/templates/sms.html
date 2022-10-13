@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+</head>
+<html>
+    {% include 'header.html' %}
+
+<body class="blue-grey lighten-5">
+
+    <!--Navbar [+]-->
+    {% include 'navbar.html' %}
+
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--============================================== Floating Button ========================================================-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large transparent">
+          <i class="large material-icons purple-text text-accent-3 z-depth-5">menu</i>
+        </a>
+        <ul>
+          <li><a href="/about" class="btn-floating purple lighten-3"><i class="material-icons">zoom_in</i></a></li>
+          <li><a href="/login" class="btn-floating purple lighten-2"><i class="material-icons">fingerprint</i></a></li>
+          <li><a href="/register" class="btn-floating purple lighten-1"><i class="material-icons">person_add</i></a></li>
+          <li><a href="/" class="btn-floating purple"><i class="material-icons">home</i></a></li>
+        </ul>
+      </div>
+
+      <!--Perfect save it now -->
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+<!--Start of the voter page which tell the user to login if he not already logged in...-->
+
+<div class="container">
+    <div class="row">
+        <!--Printing just the 'about us' in very large font size-->
+        <div class="col l10 s12 m10 offset-l1 ">
+            <h1 class="center-align green-text animate__animated animate__zoomInUp annimate__slower animate__delay-.9s" style="font-family:'Caveat' ;">Hurrah!</h1>
+        </div>
+    </div>
+
+    <div class="row center-align">
+        <div class="col s12 m12 l12">
+            <img class="last-image animate__animated animate__fadeInBottomRight" src="/static/mail_sent.svg" alt="mail_sent.jpg">
+        </div>
+    </div>
+
+    <div class="row center-align">
+        <div class="col s12 m12 l12">
+            <h3 class="custom-print animate__animated animate__fadeInBottomLeft"><i class="small material-icons green-text">check</i> Your response has been recorded.</h3>
+            <p class="grey-text text-darken-1  animate__animated animate__backInUp">Now relax untill the results are declared.</p>
+            <p class="grey-text text-darken-1  animate__animated animate__backInUp"> Click below to go home.</p>
+            <h1></h1>
+            <a href="/" class="btn waves-effect waves-purple z-depth-5 tooltipped" data-position="bottom" data-tooltip="Go Home"><i class="material-icons left">home</i>Home</a>
+        </div>
+    </div>
+
+
+</div>
+
+<!--End of the voter page which tell the user to login if he not already logged in...-->
+
+    <!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+<!--Footer [+] inclusion from footer.html-->
+{% include 'footer.html' %}
+
+</body>
+</html>

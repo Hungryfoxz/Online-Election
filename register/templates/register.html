@@ -1,0 +1,209 @@
+{% load static%}
+<!DOCTYPE html>
+</head>
+<html>
+    {% include 'header.html' %}
+
+    <!--body starts..-->
+<body class="blue-grey lighten-5">
+
+
+    {% include 'navbar.html' %}
+
+    
+
+    <!--Hero image in register form..-->
+    <div class="container">
+
+        <!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+       <!--Error message shown here!!!-->
+       <div class="row center-align" style="padding: 2px;">
+            {% if messages %}
+            <ul class="messages align-center">
+                {% for message in messages %}
+                <li {% if message.tags %} class="indigo-text text-accent-2 {{ message.tags }}"{% endif %}>
+                    <hr/>
+                    
+                    <h6></span>{{message}}</h6>
+                   
+                    <hr/>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+    
+        <!--  Header of the registration form..  -->
+        <div class="row">
+            <div class="col s12 l12 m12">
+                <h2 class="center-align custom-print animate__animated animate__fadeInDown"><i class="material-icons">assignment_ind</i> Registration Form</h2>
+                <p class="center-align grey-text text-darken-2">Register yourself here.</p>
+                <p class="center-align grey-text text-darken-2">Once you are registered all your records will be saved to the database. Remember your registration credentials, You will need them to Login.</p>
+            </div>
+        
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image animate__animated animate__fadeInLeft" src={% static 'conference.svg' %} alt="Hero image registration">
+            </div>
+        </div>
+
+    <!--[+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+        <!--Show messages here to the user/student for the status of election-->
+
+        {% for info in data %}
+            <div class="row center-align grey-text text-darken-4">
+                <p class="animate__animated animate__fadeInRight"><span class="pink-text" style="font-size: 25px;">*</span>{{ info.messaging }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+
+
+    <!--registration form..-->
+    <section class="section contianer scrollspy" id="registration">
+      <div class="row">
+        <div class="col s10 l8 offset-s1 offset-l2">
+          <form action=" " method="POST">
+
+            <!--CSRF validation-->
+            {% csrf_token %}
+
+            <!--####################################################--> 
+            <!--Name parameters-->
+            <div class="row">
+                <div class="input-field col s12 m6 l4">
+                  <input id="firstName" type="text" class="validate" name="firstName">
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="input-field col s12 m6 l4">
+                  <input id="middleName" type="text" class="validate" name="middleName">
+                  <label for="middleName">Middle Name</label>
+                </div>
+                <div class="input-field col s12 m6 l4">
+                    <input id="lastName" type="text" class="validate" name="lastName">
+                    <label for="lastName">Last Name</label>
+                  </div>
+            </div>
+            <!-- ####################################################--> 
+            <!--Email-->
+            <div class="input-field">
+                <input type="email" id="email" name="email">
+                <label for="email">Your Email</label>
+            </div>
+            <!-- ####################################################--> 
+            <!--Telephone Number-->
+            <div class="input-field">
+                <input id="telephone" type="number" class="validate"  data-length="10" name="telephone">
+                <label for="telephone">Telephone</label>
+            </div>
+            <!-- ####################################################--> 
+            <!--Date-->
+            <div class="input-field">
+                <input type="text" id="date" class="datepicker">
+                <label for="date">Date</label>
+             </div>
+             <!-- ####################################################--> 
+             <!--ASTU Roll Number-->
+            <div class="input-field">
+                <input id="rollNumber" type="number" class="validate" name="rollNumber">
+                <label for="rollNumber">ASTU Roll Number</label>
+            </div>
+            <!-- ####################################################--> 
+            <!--Deaprtment/Year-->
+            <div class="row">
+                <!--dept select method-->
+                <div class="input-field col s12 l6 m6">
+                    <select name="department" onchange="department.submit()">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="BSc">Bachelor of Science</option>
+                    <option value="IT">Bachelor of Information Technology</option>
+                    <option value="BTECH">Engineering</option>
+                    <option value="MSc">Master of Science</option>
+                    <option value="HUMAN">Humanities</option>
+                    </select>
+                    <label>Department</label>
+                </div>
+            <!-- ####################################################--> 
+                <!--Year selection-->
+                
+                <div class="input-field col s12 m6 l6" >
+                <select name="year" id="year" onchange="year.submit()">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th</option>
+                </select>
+                <label>Your Year</label>
+                </div>
+
+            </div>
+            
+            <!-- #####################################################################################################################--> 
+            <!--User agreement-->
+                    
+                <label>
+                    <input type="checkbox" id="termsChkbx " onchange="isChecked(this, 'sub1')"/>
+                        <span class=" grey-text text-darken-2">
+                        By Clicking Register,I agree that I am a student of Jorhat Institute of Science & Technology and my personal details will be saved for future reference. 
+                        I will register only once with my credentials.
+                        If I try to register another account with different id, 
+                        my activities will be registered and I will be liable to any punishment determined by the authority.
+                    </span>
+                </label>
+
+            
+                        <!--#####################################################################################################################--> 
+            <!--Buuton submit/register-->
+            <div class="align-center center-align">
+                <h1></h1>
+              <button id="sub1" disabled="disabled" class="btn z-depth-5  waves-purple waves-effect" data-tooltip="" tooltip-position="bottom"><i class="material-icons left" id="reg_me">account_circle</i> Register</button>
+            </div>
+
+          </form>
+
+          <!--end of form-->
+        </div>
+    </div>
+
+  </section>
+
+<!--[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]-->
+
+<!--End of registration form -->
+
+<!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--Form validation on-->
+    <script>
+        function isChecked(checkbox, sub1) {
+            var button = document.getElementById(sub1);
+            if (checkbox.checked === true) {
+                button.disabled = "";
+            } else {
+                button.disabled = "disabled";
+            }
+        }
+    </script>
+
+
+
+<!--footer -->
+    {% include 'footer.html' %}
+
+
+<!--Additional jQuery for the useragrement form-->
+
+</body>
+</html>

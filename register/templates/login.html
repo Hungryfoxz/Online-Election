@@ -1,0 +1,115 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    {% include 'header.html' %}
+
+    <!--body starts..-->
+<body class="blue-grey lighten-5">
+
+
+    {% include 'navbar.html' %}
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--============================================== Floating Button ========================================================-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large transparent">
+          <i class="large material-icons purple-text text-accent-3 z-depth-5">menu</i>
+        </a>
+        <ul>
+          <li><a href="/vote" class="btn-floating purple lighten-3"><i class="material-icons">touch_app</i>Vote</a></li>
+          <li><a href="/about" class="btn-floating purple lighten-2"><i class="material-icons">zoom_in</i>About</a></li>
+          <li><a href="/register" class="btn-floating purple lighten-1"><i class="material-icons">person_add</i>Register</a></li>
+          <li><a href="/" class="btn-floating purple"><i class="material-icons">home</i>Home</a></li>
+        </ul>
+      </div>
+
+      <!--Perfect save it now -->
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+    <!--Hero image for login page..-->
+    <div class="container">
+        <!--Success message shown here from django...-->
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    <hr/>
+                    <h6 class="pink-text text-accent-2"><i class="material-icons left">feedback</i>{{message}}</h6>
+                    <hr/>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        <div class="row">
+            <div class="col s12 l12 m12">
+                <h2 class="center-align custom-print animate__animated animate__fadeInDown"><i class="material-icons">border_color</i> Login Form</h2>
+                <p class="center-align  grey-text text-darken-2">If you are registered,then you are ready to login. If not registered, click <a href="/register">here.<a></p>
+            </div>
+        
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image animate__animated animate__fadeInDown" src={% static 'login-image.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+
+        <!--This is to show election status message to the user/student -->
+        {% for data in show %}
+            <div class="row center-align">
+                <p class="animate__animated animate__fadeInRight">{{ data.messaging }}</p>
+            </div>
+        {% endfor %}
+    </div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--[+] Login form..-->
+    <section class="section contianer scrollspy" id="contact">
+            
+            <div class="row">
+            <div class="col s10 m8 l10 offset-s1 offset-l1 offset-m2">
+                <form action="" method="POST">
+                    <!--CSRF Validation failed-->
+                    {% csrf_token %}
+                    <!--email [+] as the username for verification-->
+                        <div class="input-field">
+                            <input type="email" id="email" name="email">
+                            <label for="email">Your Email</label>
+                        </div>
+
+                        <!--Password Field [+] this conatins the mobile no as password for verification-->
+                        <div class="input-field">
+                            <input id="password" type="password" class="validate" data-length="10" name="password">
+                            <label for="password">Password</label>
+                            <p>Password is your mobile no ******XXXX</p>
+                        </div>
+
+                    <!--login button-->
+                    <h1></h1>
+                    <p class="grey-text center-align">Click below to login. If you have enterd the credentials.</p>
+                    <div class="align-center center-align">
+                    <button class="btn z-depth-5 waves-effect waves-purple " tooltip-position="bottom" data-tooltip=""><i class="material-icons left ">fingerprint</i> Login</button>
+                    </div>
+
+                </form>
+            </div>
+    </div>
+
+     </section>
+
+<!--End of login form -->
+
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+<!--Cartoon image above footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 center-align">
+                <img class="last-image" src={% static 'graduation.svg' %} alt="Graduation Image Cartoon">
+            </div>
+        </div>
+    </div>
+
+<!--footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

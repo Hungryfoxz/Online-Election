@@ -1,0 +1,70 @@
+ <!-- Footer -->
+ <footer class="page-footer teal lighten-4 leave_me_alone">
+    <div class="container">
+      <div class="row">
+        <div class="col s8 l6 offset-l1">
+          <h6 class="custom-print">Jorhat Institute Of Science and Technology</h6>
+          <p class="custom-print">Jorhat,785010</p>
+            <ul class="grey-text text-darken-3"><span style="font-size: 12px;">Web Admin</span> 
+                <li><i class="fa fa-envelope pink-text text-darken-4" aria-hidden="true"></i> <a class="black-text" href="/"><span style="font-size:10px;">1ndi1gat0r@gmail.com</span></a></li>
+            </ul>
+        </div>
+        <div class="col s3 l4 offset-l1">
+        <p class="black-text" style="font-size: 10px;">Connect</p>
+           <ul>
+            <li><a class="tooltipped" data-position="left" href="https://www.facebook.com/JISTjorhat" data-tooltip="This is Facebook"><i style="font-size: 14px;" class="fa fa-lg fa-facebook pink-text " aria-hidden="true"></i></a></li>
+            <li><a class="tooltipped" data-position="left" href="http://www.twitter.com" data-tooltip="This is Twitter"><i style="font-size: 14px;" class="fa fa-lg fa-twitter pink-text text-darken-2" aria-hidden="true"></i></a></li>
+            <li><a class="tooltipped" data-position="left" href="https://www.bing.com/ck/a?!&&p=033ebe76d658acf5238790be503afe106856952841fdb4fd66614b5b3e359e59JmltdHM9MTY1MjYzNjM3MyZpZ3VpZD0zN2YxNjU0ZC1jZDNkLTQyYzgtOWIwMi1jMWVhM2FkN2ZmMTAmaW5zaWQ9NTM0Ng&ptn=3&fclid=fb4c88cb-d475-11ec-b6f7-c7a4063eedb9&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvSm9yaGF0X0luc3RpdHV0ZV9vZl9TY2llbmNlXyUyNl9UZWNobm9sb2d5&ntb=1" data-tooltip="This is Google Search"><i style="font-size: 14px;" class="fa fa-lg fa-google-plus pink-text text-darken-3" aria-hidden="true"></i></a></li>
+           </ul>
+    </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue-grey darken-3">
+      <div class="container center-align"><span style="font-size: 12px;">&copy; 2022 All Rights Reserved Terms of Use and Privacy.</span></div>
+    </div>
+ </footer>
+
+
+<!--JavaScript-->
+
+
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        
+        <script>
+        $(document).ready(function()
+        {
+        $('.sidenav').sidenav();
+        $(".dropdown-trigger").dropdown();
+        $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true,
+            });
+          autoplay();
+          function autoplay() {
+              $('.carousel').carousel('next');
+              setTimeout(autoplay, 6500);
+          }
+        $('.tabs').tabs();
+        $('.scrollspy').scrollSpy();
+        $('.collapsible').collapsible();
+        $('.datepicker').datepicker({
+          disableWeekends: false
+        });
+        $('.tooltipped').tooltip();
+        $('input#phone').characterCounter();
+        $('input#password').characterCounter();
+        $('input#telephone').characterCounter();
+        $('select').formSelect();
+        $('.modal').modal();
+        $('.collapsible').collapsible();
+        $('.fixed-action-btn').floatingActionButton({
+          toolbarEnabled: false
+        });
+        });
+        </script>
+
+<!--End of JavaScript -->
